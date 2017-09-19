@@ -1,0 +1,8 @@
+DTO   Data Transform Object  数据传输对象
+
+View（JSP、HTML）---- Action   ----   Service
+
+DTO---VO结尾的类，封装是界面向Service传递的数据
+DTO---Result结尾的类，封装是Service向界面传递的数据
+如果传递的数据与表完全一致，可以直接使用POJO类即可，不是必须定义DTO
+

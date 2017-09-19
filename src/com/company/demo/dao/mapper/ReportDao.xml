@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.demo.dao.mapper.ReportDao">
+	<select id="findListByDao" parameterType="com.company.demo.service.dto.QueryVO" resultType="com.company.demo.service.dto.QueryResult">
+		select d.pname,r.refname from t_demo d,t_demo_ref r where d.refid=r.refid and d.ptime > #{ptime} and d.price > #{price} 
+	</select>
+</mapper>

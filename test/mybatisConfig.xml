@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 1-匹配属性文件路径 -->
+	<properties resource="db.properties"></properties>
+	<!-- 2-配置开发环境
+		development  开发环境
+		work         工作环境（发布完成）
+	 -->
+	<environments default="development">
+		<environment id="development">
+			<!-- 书写顺序不容颠倒 -->
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="${connection.driver_class}"/>
+				<property name="url" value="${connection.url}"/>
+				<property name="username" value="${connection.username}"/>
+				<property name="password" value="${connection.password}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<!-- 3-注册*Mapper.xml -->
+	<mappers>
+		<mapper resource="com/company/demo/dao/mapper/DemoDao.xml"/>
+		<mapper resource="com/company/demo/dao/mapper/ReportDao.xml"/>
+	</mappers>
+</configuration>

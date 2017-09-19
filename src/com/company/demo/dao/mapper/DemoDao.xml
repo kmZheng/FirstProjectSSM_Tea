@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.demo.dao.mapper.DemoDao">
+	<insert id="save" parameterType="com.company.demo.dao.pojo.Demo">
+		insert into t_demo(pname,pdate,ptime,price,pnum,refid) values(#{pname},#{pdate},#{ptime},#{price},#{pnum},#{refid});	
+	</insert>
+	<select id="findByName" parameterType="java.lang.String" resultType="com.company.demo.dao.pojo.Demo">
+		select pid,pname,pdate,ptime,price,pnum,refid from t_demo where pname like '%${value}%'
+	</select>
+</mapper>
